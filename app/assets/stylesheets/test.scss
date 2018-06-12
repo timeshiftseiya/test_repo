@@ -1,0 +1,15 @@
+.login_user{
+    
+    background: -webkit-linear-gradient(to right, #e5033e, #b701b5, #4a02c2);
+    background: linear-gradient(to right, #e5033e, #b701b5, #4a02c2);
+    mix-blend-mode: screen;
+    color: #ffffff;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+}
+
+.login_user_image img{
+    width:100px;
+    height:100px;
+}

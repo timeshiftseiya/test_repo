@@ -1,0 +1,62 @@
+<div class="container">
+<div class="col-md-6 col-md-offset-3 col-sm-10 col-sm-offset-1">
+
+<h1>ワイン詳細</h1>
+<table border=0>
+  <tr>
+    <td><%= image_tag(@wine.image) %></td>
+  </tr>
+  <tr>
+    <td>投稿者:<%= @wine.user.name %>さん</td>
+  </tr> 
+  <tr>
+    <td>ワインネーム:<%= @wine.name %></td>
+  </tr> 
+  <tr>
+    <td>産地:<%= @wine.area %></td>
+  </tr> 
+  <tr>
+    <td>色<%= @wine.color %></td>
+  </tr>
+  <tr>
+    <td>説明:<%= @wine.content %></td>
+  </tr> 
+</table>
+
+    <p>コメント一覧</p>
+    <div id="comments_area">
+      <%= render partial: 'comments/index', locals: { comments: @comments, wine: @wine } %>
+    </div>
+    <%= render partial: 'comments/form', locals: { comment: @comment, wine: @wine } %>
+    <% if current_user.id == @wine.user_id %>
+      <%= link_to '編集', edit_wine_path(@wine) %> |
+    <% end %>
+    <%= link_to '戻る', wines_path %>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<% unless @wine.user == current_user %>
+  <% if @favorite.present? %>
+    <%= link_to 'Myワインセラーから解除', favorite_path(wine_id: @wine.id), method: :delete, class: 'btn btn-danger' %>
+  <% else %>
+    <%= link_to 'Myワインセラーへ登録', favorites_path(wine_id: @wine.id), method: :post, class: 'btn btn-primary' %>
+  <% end %>
+<% end %>
+<br>
+<%= link_to '一覧画面へ', wines_path %>
+
+</div>
+</div>

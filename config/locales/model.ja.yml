@@ -1,0 +1,20 @@
+ja:
+  activerecord:
+    models:
+      wine: "ワイン"
+      user: "ユーザー"
+    attributes:
+      wine:
+        name: "ワインネーム"
+        area: " 産地"
+        color: "色"
+        image: "画像"
+        content: "説明"
+      user:
+        name: "名前"
+        avatar: "ユーザー画像"
+        email: "メールアドレス"
+        current_password: "現在のパスワード"
+        password: "パスワード"
+        password_confirmation: "確認用パスワード"
+        remember_me: "ログインを記憶"

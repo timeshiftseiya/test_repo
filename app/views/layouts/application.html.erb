@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Lvino</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <header>
+     <div class="headerInner clearfix">
+		<h1>
+		  <%= link_to root_path do %>
+			<img src="<%= asset_path 'Lvino_logo.png' %>">
+			<% end %>>
+		</h1>
+	</div><!-- headerInner --> 
+	</header> 
+    <% if user_signed_in? %>
+    <div>
+    <p class="login_user">ログインユーザー:<%= current_user.name %></p>
+    <p class="login_user_image"><%= image_tag(current_user.avatar.url)  %></p>
+    </div>
+      <ul>
+      <% if user_signed_in? %>
+          <li><%= link_to "ワイン投稿", new_wine_path %></li>
+          <li><%= link_to "おすすめワイン一覧", wines_path %></li>
+          <li><%= link_to "Myワインセラー", favorites_path %></li>
+          <li><%= link_to 'マイページ', edit_user_registration_path %></li>
+          <li><%= link_to "ログアウト", destroy_user_session_path, method: :delete %></li>
+      <% end %>
+      </ul>
+     
+    
+    
+    <% end %>
+    <%= yield %>
+    <footer>
+      <p>卒業課題</p>
+    </footer>
+  </body>
+</html>

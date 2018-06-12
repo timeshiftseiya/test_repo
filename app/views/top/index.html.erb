@@ -1,0 +1,47 @@
+<link href='https://fonts.googleapis.com/css?family=Lato:300' rel='stylesheet' type='text/css'>
+
+
+    
+    <% unless user_signed_in? %>
+    <div id="wrapper">
+		<div class="topImg"><img src="assets/Lvino_topIMG.png"></div><!-- topImg -->
+		    <div id="form-div">
+		        <div id="loginLogo"><img src="<%= asset_path 'Lvino_logo.png' %>"></div>
+			    <p id="loginText">さぁ、自分だけのワインセラーを作るたびに出かけよう!</p>
+				
+	    <div id="form-main">
+             <form class="form" id="form1">
+                  <p class="name">
+                    <input name="name" type="text" class="validate[required,custom[onlyLetter],length[0,100]] feedback-input" placeholder="Name" id="name" />
+                  </p>
+                  
+                  <p class="email">
+                    <input name="email" type="text" class="validate[required,custom[email]] feedback-input" id="email" placeholder="Email" />
+                  </p>
+                  
+                  <div class="submit">
+                        <input type="submit" value="SEND" id="button-blue"/>
+                        <div class="ease"></div>
+                  </div><!-- submit -->
+            </form>
+          </div><!-- form-main -->
+				
+			
+	
+
+      <div class="">
+        <small><div class="square_button"><%= button_to "新規登録", new_user_registration_path, :method => :get %></div></small>
+        <small><div class="square_button"><%= button_to "ログイン", new_user_session_path %></div></small>
+        <small class="square_button"><%= button_to "おすすめワイン一覧", wines_path,:method => :get %></small>
+      </h1>
+    <% else %>
+    さぁ、始めよう<br>
+     <small class="square_btn"><%= link_to "ワイン投稿", new_wine_path %></small>
+     <small class="square_btn"><%= link_to "おすすめワイン一覧", wines_path %></small>
+     <small class="square_btn"><%= link_to "Myワインセラー", favorites_path %></small>
+     <small class="square_btn"><%= link_to "ログアウト", destroy_user_session_path, method: :delete  %></small>
+     
+     
+      
+<% end %></p>
+	</div><!-- wrapper -->

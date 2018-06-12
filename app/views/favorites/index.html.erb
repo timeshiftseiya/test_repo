@@ -1,0 +1,23 @@
+<h1>Myワインセラー</h1>
+　<div class="row">
+　　<% @favorites_wines.each do |favorite| %>
+      <div class="col-xs-12 col-md-3 blog-panel">
+        <table border=0>
+
+          <tr>
+            <td><%= image_tag(favorite.image) %></td>
+          </tr>
+          <tr>
+            <td>ワインネーム:<%= favorite.name %></td>
+          </tr> 
+          <tr>
+            <td>色:<%= favorite.color %></td>
+          </tr> 
+          <tr>
+            <td><%= link_to '詳細', wine_path(favorite), class:"btn btn-info" %></td>
+         </tr>
+        </table>
+        <br>
+      </div>
+    <% end %>
+  </div>

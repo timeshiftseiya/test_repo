@@ -1,0 +1,39 @@
+<h1>おすすめワイン一覧</h1>
+
+
+<div class="container">
+  <div class="row">
+    <% @wines.each do |wine| %>
+      <div class="col-xs-12 col-md-3 blog-panel">
+        <table border=0>
+          <tr>
+            <td><%= image_tag(wine.image) %></td>
+          </tr>
+          <tr>
+            <td>投稿者:<%= wine.user.name %>さん</td>
+          </tr> 
+          <tr>
+            <td>ワインネーム:<%= wine.name %></td>
+          </tr> 
+          <tr>
+            <td>色:<%= wine.color %></td>
+          </tr> 
+          <tr>
+            <% if user_signed_in? %>
+              <td><%= link_to '詳細', wine_path(wine.id), class: 'btn btn-default btn-sm btn-success' %></td>
+            <% end %>
+          </tr>
+          <tr>
+         
+         <% unless wine.user_id == current_user %>
+            <td><%= link_to "編集", edit_wine_path(wine.id),data: { confirm: '本当に編集していいですか？' }, class: 'btn btn-default btn-sm btn-success' %></td>
+          </tr>
+          <tr>
+            <td><%= link_to '削除', wine_path(wine.id), method: :delete ,data: { confirm: '本当に削除していいですか？' }, class: 'btn btn-default btn-sm btn-success' %></td>
+          </tr> 
+          <% end %>
+        </table>
+      </div>
+    <% end %>
+  </div>
+</div>

@@ -1,0 +1,40 @@
+<div class="container">
+<div class="col-md-6 col-md-offset-3 col-sm-10 col-sm-offset-1">
+
+<%= form_with(model: @wine, local: true ,url: choose_new_or_edit ) do |form| %>
+
+  <% if @wine.errors.any? %>
+  <div id="error_explantion">
+    <h2><%= @wine.errors.count %>件のエラーがあります。</h2>
+    <ul>
+      
+   <% @wine.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+      <% end %>
+      </ul>
+      <% end %>
+      
+
+<%= form.label :画像 %>
+<%= form.file_field :image, id: :wine_image %>
+<%= form.hidden_field :image_cache %>
+<br>
+<%= form.label :名前 %>
+<%= form.text_field :name, class: 'form-control', placeholder: "pino" %>
+<br>
+<%= form.label :産地 %>
+<%= form.text_field :area, class: 'form-control', placeholder: "オーストラリア" %>
+<br>
+<%= form.label :色 %><br>
+<%= form.select :color, [["赤", "赤"], ["白", "白"], ["ロゼ", "ロゼ"]] %>
+<br>
+<%= form.label :説明 %>
+<%= form.text_area :content, class: 'form-control',placeholder: "口当たりがよく飲みやすい" %>
+<br>
+<%= form.submit "投稿", class: 'btn btn-primary btn-block' "btn btn-default btn-lg" %>
+<% end %>
+<br>
+<%= link_to "おすすめワイン一覧へ", wines_path %>
+
+</div>
+</div>
