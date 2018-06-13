@@ -4,6 +4,7 @@
 
 *{ margin: 0;padding: 0}
 a { text-decoration : none}
+a:hover { text-decoration: none; }
 ul, ol { list-style : none}
 img { vertical-align : middle;}
 h1, h2, h3, h4, h5, h6 {font-size: 16px;font-weight: normal; line-height: 1.6}
@@ -11,6 +12,7 @@ h1, h2, h3, h4, h5, h6 {font-size: 16px;font-weight: normal; line-height: 1.6}
 
 html{ height:100%;background-size: cover; }
 body { background-color: #350a03;}
+a { color:#fff;}
 
 td{ background-color:white; text-align: center; text-decoration: underline; }
 
@@ -31,4 +33,6 @@ header li a:hover{ filter:alpha(opacity=60); opacity:0.8; }
 #container .topImg { padding-top: 30px; margin: 0 auto;  background-image: url("../../images/Lvino_08.png")}
 #container .topImg .login { max-width: 30%; height: 300px; margin-bottom: 30px; background-color: #fff; margin: 0 auto; position: relative; opacity: .5; border-radius: 5px; }
 
+.googleBtn { margin-top: 10px; }
+.googleBtn p { margin: 0; }
 footer p { text-align: center; color: #fff; padding: 30px; }

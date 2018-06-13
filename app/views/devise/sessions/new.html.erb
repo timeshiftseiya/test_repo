@@ -2,7 +2,7 @@
 <div id="wrapper">
   
   <div class="topImg">
-    <img src="assets/Lvino_topIMG.png">
+    <img src="<%= asset_path "Lvino_topIMG.png" %>">
   </div><!-- topImg -->
   
 
@@ -38,10 +38,12 @@
 <% end %><!-- form for -->
 
 
-<div class=" facebookBtn btn btn-primary btn-block">
-  
+<div class="googleBtn btn btn-danger btn-block">
+  <p>Google</p>
 </div>
-<p><%= link_to "登録がまだの方はこちら",new_user_registration_path%><p>
+
+<p class="loginText_01"><%= link_to "登録がまだの方はこちら",new_user_registration_path%><br>
+<%= link_to "Googleでもログインできるよ",new_user_registration_path%></p>
 </div><!-- login_01 -->
 </div><!-- wrapper -->
 </div><!-- container -->
