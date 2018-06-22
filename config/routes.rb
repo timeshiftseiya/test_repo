@@ -8,8 +8,7 @@ Rails.application.routes.draw do
     root :to => "devise/sessions#new"
   end
   
-  resources :users, only: [:index,:show] do
-   end
+  resources :users, only: [:index,:show] 
   
   resources :relationships, only: [:create, :destroy]
    
