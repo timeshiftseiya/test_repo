@@ -3,7 +3,7 @@
   <div class="row">
   <h2>⬜︎ ユーザー</h2>
   <% @users.each do |user| %>
-  <div class="col-md-2 col-xs-12">
+  <div class="col-md-2 col-xs-3">
           <%= link_to image_tag(user.avatar), user_path(user) %>
           
           <div class="userName">
@@ -16,4 +16,6 @@
   </div><!-- toukouFrame -->
   <% end %>
   </div><!-- row -->
+  
+  
 </div><!-- container-->   
