@@ -12,9 +12,9 @@
   <% end %>
   <%= f.hidden_field :wine_id %>
   <div class="field">
-    <%= f.text_field :content, placeholder: "内容", class: "form-control"  %>
+    <%= f.text_area :content, placeholder: "内容", class: "form-control"  %>
   </div>
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit'投稿', class: 'btn btn-primary btn-block' "btn btn-default btn-lg" %>
   </div>
 <% end %>

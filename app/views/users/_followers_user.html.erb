@@ -1,0 +1,5 @@
+<% @user.followers.each do |user| %>
+<p class="user_img"><%= link_to image_tag(user.avatar), user_path(user) %></p>
+<p><%= user.name %></p>
+<% end %>
+

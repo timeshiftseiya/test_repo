@@ -2,15 +2,15 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-wrapper {max-width: 90%;padding-top: 5px; margin: 0 auto; background-color: #350a03;  position: relative; background-image: image-url("Lvino_topIMG.png"); }
-#wrapper .topImg { /*background-image: image-url("Lvino_08.png");*/}　
-#wrapper .topImg { padding-top: 30px; margin: 0 auto;}
-#wrapper .topImg .login { max-width: 30%; height: 300px; margin-bottom: 30px; background-color: #fff; margin: 0 auto; position: relative; opacity: .5; border-radius: 5px; }
+.wrapper { max-width: 90%;  padding-top: 5px; background-color:rgba(72,72,72,0.4);  position: relative;  margin-bottom: 200px; /*background-image: image-url("Lvino_topIMG.png"); */}
+.wrapper .topImg { /*background-image: image-url("Lvino_08.png");*/}　
+.wrapper .topImg { padding-top: 30px;}
+.wrapper .topImg .login { max-width: 30%; height: 300px; margin-bottom: 30px; background-color: #fff; margin: 0 auto; position: relative; opacity: .5; border-radius: 5px; }
 
-.login_01 { position: absolute; top: 200px; background-color:rgba(72,72,72,0.4); padding-top: 20px; padding-bottom: 60px;}
-.login_01 h2 { color: #fff; text-align: center; }
+#container .login_01 { max-width:100%; position: absolute; top: 150px; background-color:rgba(72,72,72,0.4); padding-top: 20px; padding-bottom: 30px;}
+.login_01 h2 { color: #fff; text-align: center;  }
 .field { color: #fff; }
-.col-md-offset-4 { margin-left: 30%}
+/*.col-md-offset-4 { margin-left: 30%}*/
 .facebookBtn { margin-top: 10px; }
 .loginText_01 { padding-top: 10px; }
 
@@ -19,7 +19,11 @@ wrapper {max-width: 90%;padding-top: 5px; margin: 0 auto; background-color: #350
 
 .title { color: #fff; }
 .actions { margin: 20px 0; }
-label { margin: 5px 0; }
+label { margin: 5px 0; color:#fff}
+
+#comments_area { color: #fff; padding-top: 20px;}
+
+
 
 
 
@@ -198,7 +202,17 @@ input:focus, textarea:focus {
 	}
 }
 
+.menu{
+  color: #350a03;
+}
 
+
+.index{
+	height:300px;
+    width:150px;
+}
+
+.contents { margin-bottom: 200px}
 
 
 // Place all the styles related to the Top controller here.

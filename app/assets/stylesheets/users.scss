@@ -1,0 +1,25 @@
+// Place all the styles related to the users controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+#sideMain { float: left; background-color: red;  padding: 0 20px; height: 100%}
+.sideMenu li a { display:block; padding: 10px 0 10px 3px; border-bottom: solid 1px #fff; }
+.label { color: #fff;}
+.rightMain  { background-color:#cccccc;  max-width:80%; float: right; }
+.rightMain h2 { margin: 0; padding-bottom: 3px; border-bottom: solid 1px #ffffff; margin-bottom: 10px; }
+.toukouFrame {max-width: 20%; padding: 10px; background-color: #454545; float: left; margin-right:20px; }
+.toukouFrame .userName { padding: 10px 0; }
+.toukouFrame tr .btn-group-sm>.btn, .btn-sm{ padding: 5px 60px;/* margin-bottom: 5px;*/ }
+
+.userName{
+ color: white;
+}
+
+.user_img{
+    height:100px;
+    width:100px;
+}
+
+.usershow {
+    height:100px;
+}

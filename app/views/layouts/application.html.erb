@@ -9,38 +9,47 @@
   </head>
 
   <body>
+    
     <header>
      <div class="headerInner clearfix">
-		<h1>
-		  <%= link_to root_path do %>
-			<img src="<%= asset_path 'Lvino_logo.png' %>">
-			<% end %>
-		</h1>
-	</div><!-- headerInner --> 
-	</header> 
-	<div class="container wrapper">
+    		<h1>
+    		  <%= link_to root_path do %>
+    			<img src="<%= asset_path 'Lvino_logo.png' %>">
+    			<% end %>
+    		</h1>
+	  </div><!-- headerInner --> 
+	  </header> 
+	
+
+
+	<div class="col-md-2 col-">
     <% if user_signed_in? %>
-    <div>
-    <p class="login_user">ログインユーザー:<%= current_user.name %></p>
-    <p class="login_user_image"><%= image_tag(current_user.avatar.url)  %></p>
-    </div>
-      <ul>
-      <% if user_signed_in? %>
-          <li><%= link_to "ワイン投稿", new_wine_path %></li>
-          <li><%= link_to "おすすめワイン一覧", wines_path %></li>
-          <li><%= link_to "Myワインセラー", favorites_path %></li>
-          <li><%= link_to 'マイページ', edit_user_registration_path %></li>
-          <li><%= link_to "ログアウト", destroy_user_session_path, method: :delete %></li>
-      <% end %>
-      </ul>
-     
-    
-    
+        <p class="login_user">ログイン中ユーザー <br><%= current_user.name %></p>
+        <p class="login_user_image"><%= image_tag(current_user.avatar.url)  %></p>
+        
+        
+        <nav class="sideMenu">
+          <ul>
+              <% if user_signed_in? %>
+                  <li><%= link_to "ワイン投稿", new_wine_path %></li>
+                  <li><%= link_to "おすすめワイン一覧", wines_path %></li>
+                  <li><%= link_to "Myワインセラー", favorites_path %></li>
+                  <li><%= link_to 'マイページ', edit_user_registration_path %></li>
+                  <li><%= link_to 'ユーザー一覧', users_path if user_signed_in? %></li>
+                  <li><%= link_to "ログアウト", destroy_user_session_path, method: :delete %></li>
+              <% end %>
+          </ul>
+        </nav><!-- sideMenu -->
     <% end %>
-    <%= yield %>
-    <footer>
+  </div><!-- col-md-2 -->
+
+<%= yield %>
+    
+    <!--<footer>
       <p>Copyright © 2013 Apple Inc. All rights reserved.</p>
-    </footer>
-  </div><!-- container -->
+    </footer>-->
+    
+ 
+  
   </body>
 </html>

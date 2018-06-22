@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   
+  
 
   devise_for :users
   
@@ -7,6 +8,13 @@ Rails.application.routes.draw do
     root :to => "devise/sessions#new"
   end
   
+  resources :users, only: [:index,:show] do
+   end
+  
+  resources :relationships, only: [:create, :destroy]
+   
+   
+   
   resources :wines do
     resources :comments
       collection do
@@ -15,4 +23,6 @@ Rails.application.routes.draw do
   end
   
   resources :favorites, only: [:create, :destroy, :index]
+  
+ 
 end
