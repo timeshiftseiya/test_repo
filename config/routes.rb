@@ -10,9 +10,7 @@ Rails.application.routes.draw do
     root :to => "devise/sessions#new"
   end
   
-  post "/logout" => "devise/sessions#destroy", :as => :destroy_user_session
-
-  
+ 
   
   resources :relationships, only: [:create, :destroy]
    
