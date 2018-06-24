@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  devise_for :users
   
   resources :wines do
     resources :comments
@@ -12,7 +13,7 @@ Rails.application.routes.draw do
     get 'logout', to: "devise/sessions#destroy", as: "logout"
   end
 
-  devise_for :users
+  
   
   resources :users, only: [:index,:show]
   

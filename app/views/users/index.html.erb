@@ -11,8 +11,9 @@
           </div><!-- userName -->
           
           <% unless user.id == current_user.id %>
-            <%= render 'follow_form', user: user %>
+            <%#= render 'follow_form', user: user %>
           <% end %>
+          <% binding.pry %>
   </div><!-- toukouFrame -->
   <% end %>
   </div><!-- row -->
