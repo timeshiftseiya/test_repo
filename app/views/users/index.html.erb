@@ -1,21 +1,23 @@
-
 <div class="container">
   <div class="row">
-  <h2>⬜︎ ユーザー</h2>
-  <% @users.each do |user| %>
-  <div class="col-md-2 col-xs-3">
-          <%= link_to image_tag(user.avatar), user_path(user) %>
-          
-          <div class="userName">
-            <%= user.name %>
-          </div><!-- userName -->
-          
-          <% unless user.id == current_user.id %>
-            <%= render 'follow_form', user: user %>
-          <% end %>
-  </div><!-- toukouFrame -->
-  <% end %>
-  </div><!-- row -->
-  
-  
-</div><!-- container-->   
+    <h2>⬜︎ ユーザー</h2>
+    <% @users.each do |user| %>
+      <div class="col-md-2 col-xs-3">
+
+        <div class="userName">
+          <%= user.name %>
+        </div>
+        <!-- userName -->
+
+        <% unless user.id == current_user.id %>
+          <%= render 'follow_form', user: user %>
+            <% end %>
+      </div>
+      <!-- toukouFrame -->
+      <% end %>
+  </div>
+  <!-- row -->
+
+
+</div>
+<!-- container-->

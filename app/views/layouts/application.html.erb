@@ -1,55 +1,73 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Lvino</title>
-    <%= csrf_meta_tags %>
+
+<head>
+  <title>Lvino</title>
+  <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-  </head>
+      <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+</head>
 
-  <body>
-    
-    <header>
-     <div class="headerInner clearfix">
-    		<h1>
-    		  <%= link_to root_path do %>
-    			<img src="<%= asset_path 'Lvino_logo.png' %>">
-    			<% end %>
-    		</h1>
-	  </div><!-- headerInner --> 
-	  </header> 
-	
+<body>
+
+  <header>
+    <div class="headerInner clearfix">
+      <h1>
+        <%= link_to root_path do %>
+          <img src="<%= asset_path 'Lvino_logo.png' %>">
+          <% end %>
+      </h1>
+    </div>
+    <!-- headerInner -->
+  </header>
 
 
-	<div class="col-md-2 col-">
+
+  <div class="col-md-2 col-">
     <% if user_signed_in? %>
-        <p class="login_user">ログイン中ユーザー <br><%= current_user.name %></p>
-        <p class="login_user_image"><%= image_tag(current_user.avatar.url)  %></p>
-        
-        
-        <nav class="sideMenu">
-          <ul>
-              <% if user_signed_in? %>
-                  <li><%= link_to "ワイン投稿", new_wine_path %></li>
-                  <li><%= link_to "おすすめワイン一覧", wines_path %></li>
-                  <li><%= link_to "Myワインセラー", favorites_path %></li>
-                  <li><%= link_to 'マイページ', edit_user_registration_path %></li>
-                  <li><%= link_to 'ユーザー一覧', users_path if user_signed_in? %></li>
-                  <li><%= link_to "ログアウト", destroy_user_session_path, method: :delete %></li>
-              <% end %>
-          </ul>
-        </nav><!-- sideMenu -->
-    <% end %>
-  </div><!-- col-md-2 -->
+      <p class="login_user">ログイン中ユーザー <br>
+        <%= current_user.name %>
+      </p>
 
-<%= yield %>
-    
+
+      <nav class="sideMenu">
+        <ul>
+          <% if user_signed_in? %>
+            <li>
+              <%= link_to "ワイン投稿", new_wine_path %>
+            </li>
+            <li>
+              <%= link_to "おすすめワイン一覧", wines_path %>
+            </li>
+            <li>
+              <%= link_to "Myワインセラー", favorites_path %>
+            </li>
+            <li>
+              <%= link_to 'マイページ', edit_user_registration_path %>
+            </li>
+            <li>
+              <%= link_to 'ユーザー一覧', users_path if user_signed_in? %>
+            </li>
+            <li>
+              <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
+            </li>
+            <% end %>
+        </ul>
+      </nav>
+      <!-- sideMenu -->
+      <% end %>
+  </div>
+  <!-- col-md-2 -->
+
+  <%= yield %>
+
     <!--<footer>
       <p>Copyright © 2013 Apple Inc. All rights reserved.</p>
     </footer>-->
-    
- 
-  
-  </body>
+
+
+
+</body>
+
 </html>

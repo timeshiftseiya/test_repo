@@ -1,30 +1,45 @@
 <div class="container">
     <div class="row">
         <div class="wrapper col-md-4 col-md-offset-3 col-xs-3">
-        <h2>ここは<%= @user.name %>さんのページです<h2>
-            <p><%= image_tag(@user.avatar)%></p>
-            <p>フォロー:<%= @user.followed_users.count %>人</p>
-            <p>フォロワー:<%= @user.followers.count %>人</p>
-             <% unless @user.id == current_user.id %>
-             <%= render 'follow_form', user: @user %>
-             <% end %>
-    
-        
-        <div class="row">
-            <div class="col-md-10 col-md-offset-2 col-sm-10">
-                <h1><strong>フォローユーザー一覧</strong></h1>
-                <p><%= render partial: 'followed_user' %></p>
-            </div><!-- col-md-10 col-md-offset-2 col-sm-10 -->
-        </div><!-- row -->
-        
-        <div class="row">
-            <div class="col-md-10 col-md-offset-2 col-sm-10">
-                <h1><strong>フォロワーユーザー一覧</strong></h1>
-                <p><%= render partial: 'followers_user' %></p>
-            </div><!-- col-md-4 col-md-offset-3 col-sm-10 -->
-        </div><!-- row -->
-        
-        </div><!-- wrapper col-md-4 col-md-offset-3 col-sm-10 -->   
-    </div><!-- row -->
-</div><!-- container -->
+            <h2>ここは
+                <%= @user.name %>さんのページです
+                    <h2>
+                        <p>
+                        </p>
+                        <p>フォロー:
+                            <%= @user.followed_users.count %>人</p>
+                        <p>フォロワー:
+                            <%= @user.followers.count %>人</p>
+                        <% unless @user.id == current_user.id %>
+                            <%= render 'follow_form', user: @user %>
+                                <% end %>
 
+
+                                    <div class="row">
+                                        <div class="col-md-10 col-md-offset-2 col-sm-10">
+                                            <h1><strong>フォローユーザー一覧</strong></h1>
+                                            <p>
+                                                <%= render partial: 'followed_user' %>
+                                            </p>
+                                        </div>
+                                        <!-- col-md-10 col-md-offset-2 col-sm-10 -->
+                                    </div>
+                                    <!-- row -->
+
+                                    <div class="row">
+                                        <div class="col-md-10 col-md-offset-2 col-sm-10">
+                                            <h1><strong>フォロワーユーザー一覧</strong></h1>
+                                            <p>
+                                                <%= render partial: 'followers_user' %>
+                                            </p>
+                                        </div>
+                                        <!-- col-md-4 col-md-offset-3 col-sm-10 -->
+                                    </div>
+                                    <!-- row -->
+
+        </div>
+        <!-- wrapper col-md-4 col-md-offset-3 col-sm-10 -->
+    </div>
+    <!-- row -->
+</div>
+<!-- container -->
