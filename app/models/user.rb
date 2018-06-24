@@ -14,7 +14,7 @@ class User < ApplicationRecord
    
    mount_uploader :avatar, AvatarUploader
    
-   validates :avatar, presence: true
+  #  validates :avatar, presence: true
    
    def follow!(other_user)
      relationships.create!(followed_id: other_user.id)
