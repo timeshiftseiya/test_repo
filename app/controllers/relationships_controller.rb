@@ -6,7 +6,7 @@ class RelationshipsController < ApplicationController
     @user = User.find(params[:relationship][:followed_id])
     current_user.follow!(@user)
     respond_to do |format|
-      format.js @user
+      format.js {render :create}
     end
     
   end
@@ -14,6 +14,8 @@ class RelationshipsController < ApplicationController
   def destroy
     @user = Relationship.find(params[:id]).followed
     current_user.unfollow!(@user)
-    rendor @user
+    respond_to do |format|
+      format.js {render :destroy}
+    end 
   end
 end
